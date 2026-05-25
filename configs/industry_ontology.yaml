@@ -1,0 +1,60 @@
+entities:
+  - 투자대상기업
+  - 산업
+  - 시장
+  - 고객군
+  - 문제/니즈
+  - 시장규모
+  - 성장률
+  - 성장요인
+  - 트렌드
+  - 경쟁환경
+  - 경쟁사
+  - 규제/정책
+  - 사업기회
+  - 리스크
+  - 근거문서
+relations:
+  - source: 투자대상기업
+    relation: 속한다
+    target: 산업
+  - source: 산업
+    relation: 포함한다
+    target: 시장
+  - source: 시장
+    relation: 가진다
+    target: 시장규모
+  - source: 시장
+    relation: 가진다
+    target: 성장률
+  - source: 시장
+    relation: 가진다
+    target: 성장요인
+  - source: 고객군
+    relation: 가진다
+    target: 문제/니즈
+  - source: 산업
+    relation: 가진다
+    target: 경쟁환경
+  - source: 산업
+    relation: 가진다
+    target: 리스크
+  - source: 트렌드
+    relation: 만든다
+    target: 사업기회
+required_fields:
+  - industry
+  - target_market
+  - growth_drivers
+  - customer_pain
+  - competition
+  - opportunity
+  - risk
+include_when:
+  - 시장규모 또는 성장률에 대한 근거가 문서에 존재할 때
+  - 산업 트렌드가 투자대상기업의 기회와 직접 연결될 때
+  - 경쟁환경이 투자대상기업의 포지셔닝 설명에 필요할 때
+exclude_when:
+  - 투자대상기업 제품 홍보에만 해당하고 산업 설명이 아닐 때
+  - 근거가 없는 시장 전망일 때
+  - 동일한 내용이 반복될 때
