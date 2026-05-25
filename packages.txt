@@ -1,3 +1,0 @@
-# System packages for PyMuPDF/python-docx are usually not needed on Streamlit Cloud.
-# Keep this file for future native dependencies if deployment requires them.
-
